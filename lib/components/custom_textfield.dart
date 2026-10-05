@@ -20,9 +20,6 @@ class MyTextfield extends StatelessWidget {
     return TextField(
       controller: txtController,
       obscureText: obscureText,
-      inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly,
-      ],
       decoration: InputDecoration(
         hintText: myHint,
         hintStyle: const TextStyle(
