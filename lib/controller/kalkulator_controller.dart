@@ -9,7 +9,7 @@ class KalkulatorController extends GetxController {
     hasilHitung.value = hasilTambah;
     Get.snackbar(
       "hasil jumlah",
-      "${hasilTambah.toString()}",
+      hasilTambah.toString(),
       snackPosition: SnackPosition.BOTTOM,
     );
   }
@@ -19,7 +19,7 @@ class KalkulatorController extends GetxController {
     hasilHitung.value = hasilKurang;
     Get.snackbar(
       "hasil kurang",
-      "${hasilKurang.toString()}",
+      hasilKurang.toString(),
       snackPosition: SnackPosition.BOTTOM,
     );
   }
@@ -29,7 +29,7 @@ class KalkulatorController extends GetxController {
     hasilHitung.value = hasilKali;
     Get.snackbar(
       "hasil Kali",
-      "${hasilKali.toString()}",
+      hasilKali.toString(),
       snackPosition: SnackPosition.BOTTOM,
     );
   }

@@ -1,4 +1,3 @@
-import 'package:application_project/kalkulator_page.dart';
 import 'package:application_project/routes.dart';
 import 'package:get/get.dart';
 

@@ -2,7 +2,7 @@ import 'package:application_project/models/produk_model.dart';
 import 'package:get/get.dart';
 
 class ListProdukController extends GetxController {
-  List<ProdukModel> listProduk = [
+  RxList<ProdukModel> listProduk = [
     ProdukModel(
       namaProduk: "Oppo Reno 15 5G",
       harga: "8 Juta",
@@ -111,5 +111,23 @@ class ListProdukController extends GetxController {
       image:
           "https://oasis.opstatics.com/content/dam/oasis/page/2024/global/phones/13/specs/13-blue.png",
     ),
-  ];
+  ].obs;
+
+  // Menyimpan daftar produk awal
+  late final List<ProdukModel> produkAwal;
+
+  @override
+  void onInit() {
+    super.onInit();
+
+    // Menyalin 10 produk sebelum ada yang dihapus
+    produkAwal = List<ProdukModel>.from(listProduk);
+  }
+
+  // Mengembalikan daftar produk seperti semula
+  Future<void> refreshProduk() async {
+    await Future.delayed(const Duration(seconds: 2));
+
+    listProduk.assignAll(produkAwal);
+  }
 }

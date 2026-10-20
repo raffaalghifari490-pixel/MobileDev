@@ -2,9 +2,6 @@ import 'package:application_project/components/custom_textfield.dart';
 import 'package:application_project/components/mybutton.dart';
 import 'package:application_project/controller/kalkulator_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/state_manager.dart';
 import 'package:get/get.dart';
 
 class KalkulatorPage extends StatelessWidget {
