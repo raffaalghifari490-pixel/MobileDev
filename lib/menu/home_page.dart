@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF121826),
       appBar: AppBar(title: Text("Home Page")),
       body: Container(
         height: 200,
@@ -34,16 +35,12 @@ class HomePage extends StatelessWidget {
                         height: 100,
                         fit: BoxFit.contain,
                       ),
-  
-
 
                       Text(
                         produk.namaProduk,
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white),
                       ),
-
-
 
                       Text(
                         "Rp ${produk.harga}",

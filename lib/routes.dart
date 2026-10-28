@@ -1,9 +1,11 @@
 import 'package:application_project/pages/main_menu_page.dart';
+import 'package:application_project/pages/menu_drawer.dart';
 import 'package:application_project/pages/produk_detail_page.dart';
 import 'package:application_project/pages/confirm_registration.dart';
 import 'package:application_project/pages/list_produk_page.dart';
 import 'package:application_project/pages/registration_page.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+
 
 
 class Routes {
@@ -13,6 +15,7 @@ class Routes {
   static const String listProduk = "/listProduk";
   static const String detailproduk ="/detailProduk";
   static const String mainmenu ="/mainmenu";
+  static const String maindrawer ="/menudrawer";
   
   // dll login, controller
 
@@ -22,7 +25,8 @@ class Routes {
     GetPage(name: confirmregistration, page: ()=> ConfirmRegistration()),
     GetPage(name: listProduk, page: ()=>ListProdukPage()),
     GetPage(name: detailproduk, page: ()=> ProdukDetailPage()),
-    GetPage(name: mainmenu, page: ()=>MainMenuPage())
+    GetPage(name: mainmenu, page: ()=>MainMenuPage()),
+    GetPage(name: maindrawer, page: ()=>MenuDrawer())
     // others page here dll
   ];
 }
