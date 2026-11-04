@@ -1,155 +1,169 @@
-import 'package:application_project/components/login_clone_fix.dart/mytext.dart';
+import 'package:application_project/controller/login_clone_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class LoginClone extends StatelessWidget {
-  const LoginClone({super.key});
+class LoginCloneFix extends StatelessWidget {
+  const LoginCloneFix({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller =Get.put(LoginCloneController());
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color(0xFF080808),
 
-      body: Padding(
-        padding: const EdgeInsets.all(25),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Judul
-            const Text(
-              "Log in to TikTok",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 45),
 
-            const SizedBox(height: 10),
-
-            // Deskripsi
-            const Text(
-              "Manage your account and enjoy TikTok",
-              style: TextStyle(color: Colors.grey, fontSize: 14),
-            ),
-
-            const SizedBox(height: 30),
-
-            // Username
-            Mytext(
-              hint: "Input Username",
-              filled: true,
-              color: Colors.white,
-              preIcon: Icon(Icons.person),
-              radius: 10,
-              obscureText: false,
-              bs: BorderSide.none,
-            ),
-
-            const SizedBox(height: 15),
-
-            // Password
-            Mytext(
-              hint: "Input Username",
-              filled: true,
-              color: Colors.white,
-              preIcon: Icon(Icons.lock),
-              radius: 10,
-              obscureText: true,
-              bs: BorderSide.none,
-            ),
-
-            const SizedBox(height: 10),
-
-            // Forgot Password
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                "Forgot Password?",
-                style: TextStyle(color: Colors.redAccent, fontSize: 13),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            // Tombol Login
-            SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Aksi saat tombol diklik
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                ),
-                child: const Text(
-                  "Login",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+              // Judul
+              const Text(
+                "TikTok",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1,
                 ),
               ),
-            ),
 
-            const SizedBox(height: 25),
+              const SizedBox(height: 8),
 
-            // OR
-            const Text(
-              "OR Continue with",
-              style: TextStyle(color: Colors.grey),
-            ),
-
-            const SizedBox(height: 20),
-
-            // Social Media
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _socialButton(Icons.g_mobiledata),
-                const SizedBox(width: 15),
-                _socialButton(Icons.apple),
-                const SizedBox(width: 15),
-                _socialButton(Icons.facebook),
-              ],
-            ),
-
-            const SizedBox(height: 30),
-
-            // Sign Up
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  "Don't have an account? ",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                Text(
-                  "Sign Up",
-                  style: TextStyle(
+              Row(
+                children: [
+                  Container(
+                    width: 25,
+                    height: 4,
                     color: Colors.redAccent,
-                    fontWeight: FontWeight.bold,
+                  ),
+                  Container(
+                    width: 25,
+                    height: 4,
+                    color: Colors.cyanAccent,
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 45),
+
+              // Sign In
+              const Text(
+                "Sign In",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 27,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 8),
+
+              const Text(
+                "Welcome back! Please login to your account.",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 13,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // Username
+              TextField(
+                controller: controller.txtUsername,
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: "Username",
+                  hintStyle: const TextStyle(color: Colors.grey),
+                  prefixIcon: const Icon(
+                    Icons.person_outline,
+                    color: Colors.grey,
+                  ),
+                  filled: true,
+                  fillColor: const Color(0xFF1C1C1C),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+
+              const SizedBox(height: 18),
+
+              // Password
+              TextField(
+                controller: controller.txtPassword,
+                obscureText: true,
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  hintStyle: const TextStyle(color: Colors.grey),
+                  prefixIcon: const Icon(
+                    Icons.lock_outline,
+                    color: Colors.grey,
+                  ),
+                  filled: true,
+                  fillColor: const Color(0xFF1C1C1C),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 25),
+
+              // Tombol Login
+              Obx(() {
+                return SizedBox(
+                  width: double.infinity,
+                  height: 48,
+                  child: ElevatedButton(
+                    onPressed: controller.isLoading.value
+                        ? null
+                        : () {
+                            controller.login();
+                          },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: controller.isLoading.value
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                  ),
+                );
+              }),
+
+              const SizedBox(height: 20),
+
+              const Text(
+                "Please enter your account information.",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    );
-  }
-
-  // Widget tombol sosial
-  static Widget _socialButton(IconData icon) {
-    return CircleAvatar(
-      radius: 22,
-      backgroundColor: Colors.white,
-      child: Icon(icon, color: Colors.black),
     );
   }
 }

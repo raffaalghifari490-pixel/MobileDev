@@ -27,7 +27,7 @@ class MenuDrawer extends StatelessWidget {
               title: Text('home'),
               onTap: () {
                 menucontoller.changePage(0);
-                Navigator.pop(context);
+                Get.back();
               },
             ),
             ListTile(
@@ -35,7 +35,7 @@ class MenuDrawer extends StatelessWidget {
               title: Text('history'),
               onTap: () {
                 menucontoller.changePage(1);
-                Navigator.pop(context);
+                Get.back();
               },
             ),
             ListTile(
@@ -43,7 +43,7 @@ class MenuDrawer extends StatelessWidget {
               title: Text('Profile'),
               onTap: () {
                 menucontoller.changePage(2);
-                Navigator.pop(context);
+                Get.back();
               },
             ),
           ],

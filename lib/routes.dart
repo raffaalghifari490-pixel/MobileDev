@@ -1,3 +1,4 @@
+import 'package:application_project/pages/login_clone_fix.dart';
 import 'package:application_project/pages/main_menu_page.dart';
 import 'package:application_project/pages/menu_drawer.dart';
 import 'package:application_project/pages/produk_detail_page.dart';
@@ -16,6 +17,7 @@ class Routes {
   static const String detailproduk ="/detailProduk";
   static const String mainmenu ="/mainmenu";
   static const String maindrawer ="/menudrawer";
+  static const String loginclonefix="/loginclonefix";
   
   // dll login, controller
 
@@ -26,7 +28,8 @@ class Routes {
     GetPage(name: listProduk, page: ()=>ListProdukPage()),
     GetPage(name: detailproduk, page: ()=> ProdukDetailPage()),
     GetPage(name: mainmenu, page: ()=>MainMenuPage()),
-    GetPage(name: maindrawer, page: ()=>MenuDrawer())
+    GetPage(name: maindrawer, page: ()=>MenuDrawer()),
+    GetPage(name: loginclonefix, page: ()=>LoginCloneFix())
     // others page here dll
   ];
 }
