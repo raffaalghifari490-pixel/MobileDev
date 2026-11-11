@@ -46,6 +46,14 @@ class MenuDrawer extends StatelessWidget {
                 Get.back();
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.shopping_bag),
+              title: Text('Market'),
+              onTap: () {
+                menucontoller.changePage(3);
+                Get.back();
+              },
+            ),
           ],
         ),
       ),

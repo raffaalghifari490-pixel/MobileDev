@@ -1,5 +1,6 @@
 import 'package:application_project/menu/history_page.dart';
 import 'package:application_project/menu/home_page.dart';
+import 'package:application_project/menu/market_Page.dart';
 import 'package:application_project/menu/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,5 +12,5 @@ class MenuDrawerController extends GetxController {
     selectedIndex.value = index;
   }
 
-  List<Widget> listpages = [HomePage(), HistoryPage(), ProfilePage()];
+  List<Widget> listpages = [HomePage(), HistoryPage(), ProfilePage(), MarketPage()];
 }

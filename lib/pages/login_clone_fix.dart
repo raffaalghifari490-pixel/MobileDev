@@ -124,9 +124,8 @@ class LoginCloneFix extends StatelessWidget {
                   width: double.infinity,
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: controller.isLoading.value
-                        ? null
-                        : () {
+                    onPressed: 
+                        () {
                             controller.login();
                           },
                     style: ElevatedButton.styleFrom(
